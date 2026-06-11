@@ -762,3 +762,35 @@ button {
     grid-template-columns: 1fr 1fr !important;
   }
 }
+/* Final clean homepage size fix */
+@media (min-width: 1051px) {
+  .hero {
+    min-height: 500px !important;
+    padding: 45px 8% !important;
+    grid-template-columns: 0.95fr 1.05fr !important;
+    gap: 40px !important;
+  }
+
+  .hero h1 {
+    font-size: 50px !important;
+    line-height: 1.12 !important;
+    max-width: 560px !important;
+    letter-spacing: -1px !important;
+  }
+
+  .hero-text {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    max-width: 560px !important;
+  }
+
+  .laptop-card {
+    width: min(420px, 100%) !important;
+    height: 245px !important;
+  }
+
+  .floating-card {
+    font-size: 14px !important;
+    padding: 11px 14px !important;
+  }
+}

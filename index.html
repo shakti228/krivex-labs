@@ -5,60 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Krivex Labs — Learn Cybersecurity the Practical Way</title>
-  <meta name="description" content="Krivex Labs helps beginners, students, creators, and small businesses learn cybersecurity through practical labs, safe tools, command libraries, and digital safety resources." />
-  <meta name="keywords" content="Krivex Labs, cybersecurity learning, ethical hacking, bug bounty, cyber labs, security tools, digital safety, Linux commands" />
-  <meta name="author" content="Shakti Prasad Malik" />
+  <meta name="description" content="Krivex Labs is a practical cybersecurity learning platform for ethical labs, security tools, command libraries, bug bounty basics, and digital safety resources." />
+  <meta name="keywords" content="Krivex Labs, cybersecurity learning, ethical hacking, bug bounty, cyber labs, security tools, Linux commands, digital safety" />
+  <meta name="author" content="Shakti Prasad Mallik" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <header class="site-header">
+  <header class="header">
     <a href="index.html" class="brand">
-      <div class="brand-mark">K</div>
-      <div>
+      <div class="brand-logo">K</div>
+      <div class="brand-text">
         <strong>KRIVEX LABS</strong>
         <span>Learn. Practice. Protect.</span>
       </div>
     </a>
 
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">
-      ☰
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
-   <nav class="site-nav" id="siteNav">
-  <a href="index.html" class="active">Home</a>
-  <a href="learn.html">Learn</a>
-  <a href="labs.html">Labs</a>
-  <a href="tools.html">Tools</a>
-  <a href="commands.html">Commands</a>
-  <a href="resources.html">Resources</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
+    <nav class="nav" id="navMenu">
+      <a href="index.html" class="active">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="labs.html">Labs</a>
+      <a href="tools.html">Tools</a>
+      <a href="commands.html">Commands</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-    <a href="learn.html" class="header-btn">Start Learning</a>
+    <a href="learn.html" class="header-cta">Start Learning</a>
   </header>
 
   <main>
 
     <section class="hero">
       <div class="hero-content">
-        <p class="eyebrow">Welcome to Krivex Labs</p>
+        <p class="badge">Welcome to Krivex Labs</p>
 
         <h1>Cybersecurity Learning Made Practical.</h1>
 
         <p class="hero-text">
-          Krivex Labs helps beginners, students, creators, and small businesses
-          learn cybersecurity through simple lessons, ethical labs, useful tools,
-          real commands, and digital safety resources.
+          Build real cybersecurity skills with simple lessons, ethical labs,
+          useful tools, command libraries, bug bounty basics, and digital safety resources.
         </p>
 
         <div class="hero-actions">
-          <a href="#learn" class="btn primary">Start Learning</a>
-          <a href="#tools" class="btn secondary">Explore Tools</a>
+          <a href="learn.html" class="btn btn-primary">Start Learning</a>
+          <a href="tools.html" class="btn btn-outline">Explore Tools</a>
         </div>
 
         <div class="hero-points">
@@ -69,134 +70,146 @@
       </div>
 
       <div class="hero-visual">
-        <div class="laptop-card">
-          <div class="screen">
+        <div class="visual-card">
+          <div class="visual-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="visual-screen">
             <div class="shield">K</div>
-            <p>Secure → Learn → Protect</p>
+            <h3>Secure → Learn → Protect</h3>
+            <p>Legal labs, safe tools, practical skills.</p>
           </div>
         </div>
 
-        <div class="floating-card card-one">🔐 Safety First</div>
-        <div class="floating-card card-two">🧪 Legal Labs</div>
-        <div class="floating-card card-three">💻 Tools</div>
+        <div class="float-card float-one">Ethical Labs</div>
+        <div class="float-card float-two">Security Tools</div>
+        <div class="float-card float-three">Digital Safety</div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div>
+    <section class="trust">
+      <div class="trust-item">
         <strong>Ethical Learning</strong>
-        <p>Legal, responsible, and safe cybersecurity education.</p>
+        <p>Learn cybersecurity safely with legal and responsible guidance.</p>
       </div>
-      <div>
+
+      <div class="trust-item">
         <strong>Hands-on Practice</strong>
-        <p>Learn with labs, tools, commands, and guided resources.</p>
+        <p>Use labs, tools, commands, and templates to build real skills.</p>
       </div>
-      <div>
-        <strong>Real-world Skills</strong>
-        <p>Build skills useful for digital safety and bug bounty learning.</p>
+
+      <div class="trust-item">
+        <strong>Career Ready Skills</strong>
+        <p>Prepare for bug bounty, digital safety, Linux, and web security.</p>
       </div>
     </section>
 
-    <section class="section" id="learn">
-      <div class="section-heading">
+    <section class="section">
+      <div class="section-head center">
         <p class="section-label">What You Can Learn</p>
-        <h2>Simple paths for practical cybersecurity learning.</h2>
+        <h2>A clean path to practical cybersecurity.</h2>
       </div>
 
-      <div class="feature-grid">
-        <article class="feature-card">
+      <div class="card-grid four">
+        <article class="info-card">
           <div class="icon blue">📘</div>
           <h3>Learn</h3>
-          <p>Step-by-step cybersecurity lessons for beginners and learners.</p>
-          <a href="#">Start Learning →</a>
+          <p>Beginner-friendly lessons for cybersecurity fundamentals, Linux, web security, and safety.</p>
+          <a href="learn.html">Start Learning →</a>
         </article>
 
-        <article class="feature-card">
+        <article class="info-card">
           <div class="icon green">🧪</div>
           <h3>Practice</h3>
-          <p>Hands-on labs to practice safely in legal environments.</p>
-          <a href="#labs">Explore Labs →</a>
+          <p>Safe labs for ethical learning using trusted platforms and controlled environments.</p>
+          <a href="labs.html">Explore Labs →</a>
         </article>
 
-        <article class="feature-card">
+        <article class="info-card">
           <div class="icon purple">🛠</div>
           <h3>Use Tools</h3>
-          <p>Useful open-source tools with simple usage and commands.</p>
-          <a href="#tools">View Tools →</a>
+          <p>Useful cybersecurity tools with simple commands, docs, and safe usage notes.</p>
+          <a href="tools.html">View Tools →</a>
         </article>
 
-        <article class="feature-card">
+        <article class="info-card">
           <div class="icon orange">🛡</div>
           <h3>Stay Safe</h3>
-          <p>Digital safety resources to protect accounts, devices, and data.</p>
-          <a href="#resources">Learn Safety →</a>
+          <p>Digital safety resources to protect accounts, devices, websites, and identity.</p>
+          <a href="resources.html">View Resources →</a>
         </article>
       </div>
     </section>
 
-    <section class="section light-section">
-      <div class="section-heading">
-        <p class="section-label">Learning Paths</p>
-        <h2>Choose your starting point.</h2>
+    <section class="section soft">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Learning Paths</p>
+          <h2>Choose your starting point.</h2>
+        </div>
+        <a href="learn.html" class="view-link">View all paths →</a>
       </div>
 
-      <div class="path-grid">
+      <div class="card-grid four">
         <article class="path-card">
           <h3>Beginner Path</h3>
           <p>Start from zero and understand cybersecurity basics.</p>
-          <div class="path-meta">
+          <div class="meta">
             <span>Beginner</span>
             <span>7 Days</span>
           </div>
-          <a href="#">Start Path →</a>
+          <a href="learn.html">Start Path →</a>
         </article>
 
         <article class="path-card">
           <h3>Linux & Command Line</h3>
-          <p>Learn Linux basics, terminal usage, and useful commands.</p>
-          <div class="path-meta">
+          <p>Learn terminal basics, file permissions, and useful commands.</p>
+          <div class="meta">
             <span>Beginner</span>
             <span>5 Days</span>
           </div>
-          <a href="#">Start Path →</a>
+          <a href="learn.html">Start Path →</a>
         </article>
 
         <article class="path-card">
           <h3>Web Security</h3>
-          <p>Understand how websites work and learn web security basics.</p>
-          <div class="path-meta">
+          <p>Understand websites, HTTP, headers, and safe web testing basics.</p>
+          <div class="meta">
             <span>Intermediate</span>
             <span>10 Days</span>
           </div>
-          <a href="#">Start Path →</a>
+          <a href="learn.html">Start Path →</a>
         </article>
 
         <article class="path-card">
           <h3>Bug Bounty Basics</h3>
-          <p>Learn scope reading, reporting, and responsible disclosure.</p>
-          <div class="path-meta">
+          <p>Learn scope reading, recon notes, reporting, and responsible disclosure.</p>
+          <div class="meta">
             <span>Beginner</span>
             <span>12 Days</span>
           </div>
-          <a href="#">Start Path →</a>
+          <a href="learn.html">Start Path →</a>
         </article>
       </div>
     </section>
 
-    <section class="section" id="labs">
-      <div class="section-heading">
-        <p class="section-label">Practice Safely</p>
-        <h2>Featured cybersecurity labs.</h2>
-        <p class="section-desc">
-          Practice only in legal labs, owned assets, or authorized environments.
-        </p>
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Practice Safely</p>
+          <h2>Featured cybersecurity labs.</h2>
+        </div>
+        <a href="labs.html" class="view-link">View all labs →</a>
       </div>
 
-      <div class="labs-grid">
+      <div class="card-grid three">
         <article class="lab-card">
           <span>Beginner</span>
           <h3>OWASP Juice Shop</h3>
-          <p>A modern vulnerable web app for safe web security learning.</p>
+          <p>A modern vulnerable web app for safe web security practice.</p>
           <a href="https://owasp.org/www-project-juice-shop/" target="_blank">Start Lab →</a>
         </article>
 
@@ -216,13 +229,16 @@
       </div>
     </section>
 
-    <section class="section light-section" id="tools">
-      <div class="section-heading">
-        <p class="section-label">Tools</p>
-        <h2>Useful tools with safe commands.</h2>
+    <section class="section soft">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Tools</p>
+          <h2>Useful tools with simple commands.</h2>
+        </div>
+        <a href="tools.html" class="view-link">View all tools →</a>
       </div>
 
-      <div class="tools-grid">
+      <div class="card-grid three">
         <article class="tool-card">
           <h3>Subfinder</h3>
           <p>Passive subdomain discovery for authorized targets and labs.</p>
@@ -232,7 +248,7 @@
 
         <article class="tool-card">
           <h3>httpx</h3>
-          <p>Check live hosts, status codes, and web titles.</p>
+          <p>Check live hosts, status codes, titles, and technologies.</p>
           <code>httpx -l targets.txt -status-code -title</code>
           <button onclick="copyText('httpx -l targets.txt -status-code -title')">Copy Command</button>
         </article>
@@ -246,13 +262,16 @@
       </div>
     </section>
 
-    <section class="section" id="resources">
-      <div class="section-heading">
-        <p class="section-label">Resources</p>
-        <h2>Templates, checklists, and guides.</h2>
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Resources</p>
+          <h2>Templates, checklists, and guides.</h2>
+        </div>
+        <a href="resources.html" class="view-link">View resources →</a>
       </div>
 
-      <div class="resource-grid">
+      <div class="card-grid four">
         <article class="resource-card">
           <h3>Bug Bounty Checklist</h3>
           <p>Step-by-step checklist for beginner bug bounty learning.</p>
@@ -260,44 +279,45 @@
 
         <article class="resource-card">
           <h3>Report Template</h3>
-          <p>Clean vulnerability report format for responsible disclosure.</p>
+          <p>Clean report format for responsible vulnerability disclosure.</p>
         </article>
 
         <article class="resource-card">
           <h3>Linux Commands Sheet</h3>
-          <p>Useful Linux commands for cybersecurity learners.</p>
+          <p>Useful Linux commands for daily cybersecurity learning.</p>
         </article>
 
         <article class="resource-card">
           <h3>Digital Safety Guide</h3>
-          <p>Protect accounts, devices, and online identity.</p>
+          <p>Simple steps to protect accounts, devices, and online identity.</p>
         </article>
       </div>
     </section>
 
-    <section class="section services-section" id="services">
+    <section class="cta-section">
       <div>
-        <p class="section-label">Services</p>
-        <h2>Cybersecurity support and guidance.</h2>
+        <p class="section-label light">Services</p>
+        <h2>Need practical cybersecurity guidance?</h2>
         <p>
-          Krivex Labs provides beginner-friendly cybersecurity guidance,
-          digital safety support, Linux/Kali learning help, and bug bounty report guidance.
+          Krivex Labs provides beginner-friendly cybersecurity support,
+          digital safety guidance, Linux/Kali learning help, and bug bounty report review.
         </p>
       </div>
 
-      <a href="#about" class="btn primary">Contact Krivex Labs</a>
+      <a href="services.html" class="btn btn-white">Explore Services</a>
     </section>
 
-    <section class="section about-section" id="about">
-      <div class="about-box">
-        <div class="about-mark">K</div>
+    <section class="section">
+      <div class="about-card">
+        <div class="about-logo">K</div>
         <div>
           <p class="section-label">About Krivex Labs</p>
           <h2>Founded by Shakti Prasad Malik.</h2>
           <p>
-            Krivex Labs is a practical cybersecurity learning and digital safety
-            platform created by Shakti Prasad Malik, founder of CyberWithShakti.
-            Our mission is to make cybersecurity simple, ethical, and useful.
+            Krivex Labs is a practical cybersecurity learning and digital safety platform
+            created by Shakti Prasad Malik, founder of CyberWithShakti. The mission is to
+            make cybersecurity simple, ethical, and useful for learners, creators, students,
+            and small businesses.
           </p>
         </div>
       </div>
@@ -309,34 +329,36 @@
     <div>
       <h3>KRIVEX LABS</h3>
       <p>Learn. Practice. Protect.</p>
-      <p>Practical cybersecurity learning for beginners and professionals.</p>
+      <p>Practical cybersecurity learning for ethical learners and future defenders.</p>
     </div>
 
     <div>
       <h4>Explore</h4>
-      <a href="#learn">Learn</a>
-      <a href="#labs">Labs</a>
-      <a href="#tools">Tools</a>
-      <a href="#resources">Resources</a>
+      <a href="learn.html">Learn</a>
+      <a href="labs.html">Labs</a>
+      <a href="tools.html">Tools</a>
+      <a href="commands.html">Commands</a>
+    </div>
+
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Checklists</a>
+      <a href="resources.html">Templates</a>
+      <a href="resources.html">Guides</a>
+      <a href="services.html">Services</a>
     </div>
 
     <div>
       <h4>Company</h4>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#">Contact</a>
-    </div>
-
-    <div>
-      <h4>Legal</h4>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Disclaimer</a>
-      <a href="#">Terms</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
     </div>
   </footer>
 
   <div class="copyright">
-    © 2026 Krivex Labs. Founded by Shakti Prasad Malik.
+    © 2026 Krivex Labs. Founded by Shakti Prasad Mallik.
   </div>
 
   <script src="script.js"></script>

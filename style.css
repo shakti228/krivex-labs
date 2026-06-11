@@ -725,3 +725,40 @@ button {
     text-align: left;
   }
 }
+/* Final desktop hero balance fix */
+@media (min-width: 1051px) {
+  .hero {
+    min-height: 540px !important;
+    padding: 55px 8% !important;
+    grid-template-columns: 0.9fr 1.1fr !important;
+    gap: 50px !important;
+  }
+
+  .hero h1 {
+    font-size: 56px !important;
+    line-height: 1.08 !important;
+    max-width: 560px !important;
+    letter-spacing: -1.2px !important;
+  }
+
+  .hero-text {
+    max-width: 560px !important;
+    font-size: 17px !important;
+  }
+
+  .laptop-card {
+    width: min(440px, 100%) !important;
+    height: 260px !important;
+  }
+}
+
+/* Large screen fix */
+@media (min-width: 1300px) {
+  .hero h1 {
+    font-size: 60px !important;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}

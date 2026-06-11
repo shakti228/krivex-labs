@@ -1,13 +1,66 @@
-function toggleMenu() {
-  const nav = document.getElementById("siteNav");
-  nav.classList.toggle("open");
+const menuBtn =
+  document.getElementById("menuBtn") ||
+  document.querySelector(".menu-btn") ||
+  document.querySelector(".menu-toggle");
+
+const navMenu =
+  document.getElementById("navMenu") ||
+  document.getElementById("siteNav") ||
+  document.querySelector(".nav") ||
+  document.querySelector(".site-nav");
+
+if (menuBtn && navMenu) {
+  menuBtn.addEventListener("click", function () {
+    navMenu.classList.toggle("open");
+    menuBtn.classList.toggle("active");
+  });
+
+  document.addEventListener("click", function (event) {
+    const clickedMenu = navMenu.contains(event.target);
+    const clickedButton = menuBtn.contains(event.target);
+
+    if (!clickedMenu && !clickedButton) {
+      navMenu.classList.remove("open");
+      menuBtn.classList.remove("active");
+    }
+  });
 }
+
+/* Auto active menu based on current page */
+function setActiveMenu() {
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const links = document.querySelectorAll(".nav a, .site-nav a");
+
+  links.forEach(function (link) {
+    const linkPage = link.getAttribute("href");
+
+    link.classList.remove("active");
+
+    if (currentPage === "" && linkPage === "index.html") {
+      link.classList.add("active");
+    }
+
+    if (currentPage === linkPage) {
+      link.classList.add("active");
+    }
+
+    if (currentPage === "index.html" && linkPage === "index.html") {
+      link.classList.add("active");
+    }
+  });
+}
+
+setActiveMenu();
 
 function copyText(text) {
   if (navigator.clipboard) {
     navigator.clipboard.writeText(text)
-      .then(() => showToast("Command copied!"))
-      .catch(() => fallbackCopy(text));
+      .then(function () {
+        showToast("Command copied!");
+      })
+      .catch(function () {
+        fallbackCopy(text);
+      });
   } else {
     fallbackCopy(text);
   }
@@ -30,16 +83,18 @@ function fallbackCopy(text) {
 }
 
 function showToast(message) {
-  const oldToast = document.querySelector(".toast");
-  if (oldToast) oldToast.remove();
+  const oldToast = document.querySelector(".toast-message");
+  if (oldToast) {
+    oldToast.remove();
+  }
 
   const toast = document.createElement("div");
-  toast.className = "toast";
+  toast.className = "toast-message";
   toast.innerText = message;
 
   toast.style.position = "fixed";
-  toast.style.bottom = "22px";
   toast.style.left = "50%";
+  toast.style.bottom = "22px";
   toast.style.transform = "translateX(-50%)";
   toast.style.background = "#2563eb";
   toast.style.color = "#ffffff";
@@ -51,18 +106,7 @@ function showToast(message) {
 
   document.body.appendChild(toast);
 
-  setTimeout(() => {
+  setTimeout(function () {
     toast.remove();
   }, 1800);
 }
-
-document.addEventListener("click", function (event) {
-  const nav = document.getElementById("siteNav");
-  const button = document.querySelector(".menu-toggle");
-
-  if (!nav || !button) return;
-
-  if (!nav.contains(event.target) && !button.contains(event.target)) {
-    nav.classList.remove("open");
-  }
-});

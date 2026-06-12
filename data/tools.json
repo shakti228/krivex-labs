@@ -20,6 +20,13 @@
       "description": "Template-based scanner for legal and authorized testing only.",
       "command": "nuclei -l targets.txt",
       "link": "https://github.com/projectdiscovery/nuclei"
+    },
+    {
+      "category": "OSINT",
+      "name": " Amass",
+      "description": "Attack surface mapping and asset discovery tool.",
+      "command": "amass enum -d example.com",
+      "link": "https://github.com/owasp-amass/amass"
     }
   ]
 }

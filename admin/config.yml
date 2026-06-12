@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "tools"
+    label: "Tools"
+    folder: "content/tools"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tool Name", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Recon", "Web Security", "Linux", "OSINT", "Bug Bounty", "Wordlists"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Command", name: "command", widget: "code", required: false }
+      - { label: "GitHub Link", name: "github_link", widget: "string", required: false }
+      - { label: "Safety Note", name: "safety_note", widget: "text", required: false }
+  - name: "labs"
+    label: "Labs"
+    folder: "content/labs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Lab Name", name: "title", widget: "string" }
+      - { label: "Difficulty", name: "difficulty", widget: "select", options: ["Beginner", "Intermediate", "Advanced"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Start Link", name: "start_link", widget: "string" }
+  - name: "resources"
+    label: "Resources"
+    folder: "content/resources"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["Checklist", "Template", "Guide", "PDF"] }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Download Link", name: "download_link", widget: "string", required: false }

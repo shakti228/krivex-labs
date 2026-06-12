@@ -1,112 +1,38 @@
-const menuBtn =
-  document.getElementById("menuBtn") ||
-  document.querySelector(".menu-btn") ||
-  document.querySelector(".menu-toggle");
-
-const navMenu =
-  document.getElementById("navMenu") ||
-  document.getElementById("siteNav") ||
-  document.querySelector(".nav") ||
-  document.querySelector(".site-nav");
-
+const menuBtn = document.getElementById('menuBtn');
+const navMenu = document.getElementById('navMenu');
 if (menuBtn && navMenu) {
-  menuBtn.addEventListener("click", function () {
-    navMenu.classList.toggle("open");
-    menuBtn.classList.toggle("active");
+  menuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    menuBtn.classList.toggle('active');
   });
-
-  document.addEventListener("click", function (event) {
-    const clickedMenu = navMenu.contains(event.target);
-    const clickedButton = menuBtn.contains(event.target);
-
-    if (!clickedMenu && !clickedButton) {
-      navMenu.classList.remove("open");
-      menuBtn.classList.remove("active");
+  document.addEventListener('click', (event) => {
+    if (!navMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+      navMenu.classList.remove('open');
+      menuBtn.classList.remove('active');
     }
   });
 }
-
-/* Auto active menu based on current page */
-function setActiveMenu() {
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const links = document.querySelectorAll(".nav a, .site-nav a");
-
-  links.forEach(function (link) {
-    const linkPage = link.getAttribute("href");
-
-    link.classList.remove("active");
-
-    if (currentPage === "" && linkPage === "index.html") {
-      link.classList.add("active");
-    }
-
-    if (currentPage === linkPage) {
-      link.classList.add("active");
-    }
-
-    if (currentPage === "index.html" && linkPage === "index.html") {
-      link.classList.add("active");
-    }
+function setActiveMenu(){
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav a').forEach(link=>{
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+    if (href === current || (current === '' && href === 'index.html')) link.classList.add('active');
   });
 }
-
 setActiveMenu();
-
-function copyText(text) {
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text)
-      .then(function () {
-        showToast("Command copied!");
-      })
-      .catch(function () {
-        fallbackCopy(text);
-      });
-  } else {
-    fallbackCopy(text);
-  }
+function copyText(text){
+  if(navigator.clipboard){navigator.clipboard.writeText(text).then(()=>showToast('Command copied!')).catch(()=>fallbackCopy(text));}
+  else fallbackCopy(text);
 }
-
-function fallbackCopy(text) {
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  document.body.appendChild(textarea);
-  textarea.select();
-
-  try {
-    document.execCommand("copy");
-    showToast("Command copied!");
-  } catch (error) {
-    alert("Copy failed. Please copy manually.");
-  }
-
-  document.body.removeChild(textarea);
+function fallbackCopy(text){
+  const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();
+  try{document.execCommand('copy');showToast('Command copied!');}catch(e){alert('Copy failed. Please copy manually.');}
+  document.body.removeChild(t);
 }
-
-function showToast(message) {
-  const oldToast = document.querySelector(".toast-message");
-  if (oldToast) {
-    oldToast.remove();
-  }
-
-  const toast = document.createElement("div");
-  toast.className = "toast-message";
-  toast.innerText = message;
-
-  toast.style.position = "fixed";
-  toast.style.left = "50%";
-  toast.style.bottom = "22px";
-  toast.style.transform = "translateX(-50%)";
-  toast.style.background = "#2563eb";
-  toast.style.color = "#ffffff";
-  toast.style.padding = "12px 18px";
-  toast.style.borderRadius = "12px";
-  toast.style.fontWeight = "800";
-  toast.style.zIndex = "9999";
-  toast.style.boxShadow = "0 16px 35px rgba(37, 99, 235, 0.25)";
-
-  document.body.appendChild(toast);
-
-  setTimeout(function () {
-    toast.remove();
-  }, 1800);
+function showToast(message){
+  const old=document.querySelector('.toast-message'); if(old) old.remove();
+  const toast=document.createElement('div'); toast.className='toast-message'; toast.innerText=message;
+  toast.style.cssText='position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#2563eb;color:#fff;padding:12px 18px;border-radius:12px;font-weight:800;z-index:9999;box-shadow:0 16px 35px rgba(37,99,235,.25)';
+  document.body.appendChild(toast); setTimeout(()=>toast.remove(),1800);
 }

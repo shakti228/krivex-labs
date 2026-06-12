@@ -7,25 +7,11 @@ public_folder: "/assets/uploads"
 
 site_url: "https://splendid-monstera-2db878.netlify.app"
 display_url: "https://splendid-monstera-2db878.netlify.app"
-logo_url: "/assets/uploads/logo.png"
 
 collections:
   - name: "dynamic_pages"
     label: "Dynamic Pages"
     files:
-          - label: "Tools JSON"
-        name: "tools_json"
-        file: "data/tools.json"
-        fields:
-          - label: "Tools"
-            name: "tools"
-            widget: "list"
-            fields:
-              - { label: "Tool Name", name: "name", widget: "string" }
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Command", name: "command", widget: "string" }
-              - { label: "Link", name: "link", widget: "string", required: false }
       - label: "Homepage JSON"
         name: "homepage_json"
         file: "data/homepage.json"
@@ -40,6 +26,21 @@ collections:
           - { label: "Point 1", name: "point_1", widget: "string" }
           - { label: "Point 2", name: "point_2", widget: "string" }
           - { label: "Point 3", name: "point_3", widget: "string" }
+
+      - label: "Tools JSON"
+        name: "tools_json"
+        file: "data/tools.json"
+        fields:
+          - label: "Tools"
+            name: "tools"
+            widget: "list"
+            fields:
+              - { label: "Tool Name", name: "name", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Command", name: "command", widget: "string" }
+              - { label: "Link", name: "link", widget: "string", required: false }
+
   - name: "settings"
     label: "Website Settings"
     files:
@@ -54,9 +55,6 @@ collections:
           - { label: "Primary Button Link", name: "primary_button_link", widget: "string", default: "learn.html" }
           - { label: "Secondary Button Text", name: "secondary_button_text", widget: "string", default: "Explore Tools" }
           - { label: "Secondary Button Link", name: "secondary_button_link", widget: "string", default: "tools.html" }
-          - { label: "Point 1", name: "point_1", widget: "string", default: "100% Ethical" }
-          - { label: "Point 2", name: "point_2", widget: "string", default: "Beginner Friendly" }
-          - { label: "Point 3", name: "point_3", widget: "string", default: "Practical Learning" }
 
       - label: "SEO Settings"
         name: "seo"
@@ -139,7 +137,7 @@ collections:
     fields:
       - { label: "Command Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "select", options: ["Linux", "Kali", "Recon", "HTTP", "Git", "Docker", "Web Security"] }
-      - { label: "Command Code", name: "command", widget: "code" }
+      - { label: "Command Code", name: "command", widget: "text" }
       - { label: "Use Case", name: "description", widget: "text" }
       - { label: "Safety Note", name: "safety_note", widget: "text", default: "Use only for ethical learning and authorized testing." }
 

@@ -13,6 +13,19 @@ collections:
   - name: "dynamic_pages"
     label: "Dynamic Pages"
     files:
+          - label: "Tools JSON"
+        name: "tools_json"
+        file: "data/tools.json"
+        fields:
+          - label: "Tools"
+            name: "tools"
+            widget: "list"
+            fields:
+              - { label: "Tool Name", name: "name", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Command", name: "command", widget: "string" }
+              - { label: "Link", name: "link", widget: "string", required: false }
       - label: "Homepage JSON"
         name: "homepage_json"
         file: "data/homepage.json"

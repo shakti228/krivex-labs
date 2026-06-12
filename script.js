@@ -177,3 +177,36 @@ function showToast(message) {
     toast.remove();
   }, 1800);
 }
+/* Tools dynamic loader */
+function loadToolsContent() {
+  const toolsContainer = document.getElementById("toolsContainer");
+
+  if (!toolsContainer) return;
+
+  fetch("data/tools.json?v=" + new Date().getTime())
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      toolsContainer.innerHTML = "";
+
+      data.tools.forEach(function (tool) {
+        const card = document.createElement("article");
+        card.className = "tool-card";
+
+        card.innerHTML = `
+          <h3>${tool.name}</h3>
+          <p>${tool.description}</p>
+          <code>${tool.command}</code>
+          <button onclick="copyText('${tool.command.replace(/'/g, "\\'")}')">Copy Command</button>
+        `;
+
+        toolsContainer.appendChild(card);
+      });
+    })
+    .catch(function (error) {
+      console.log("Tools data not loaded:", error);
+    });
+}
+
+loadToolsContent();

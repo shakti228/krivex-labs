@@ -5,7 +5,72 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
+site_url: "https://splendid-monstera-2db878.netlify.app"
+display_url: "https://splendid-monstera-2db878.netlify.app"
+logo_url: "/assets/uploads/logo.png"
+
 collections:
+  - name: "settings"
+    label: "Website Settings"
+    files:
+      - label: "Homepage Settings"
+        name: "homepage"
+        file: "content/settings/homepage.yml"
+        fields:
+          - { label: "Hero Badge", name: "hero_badge", widget: "string", default: "Welcome to Krivex Labs" }
+          - { label: "Hero Title", name: "hero_title", widget: "string", default: "Cybersecurity Learning Made Practical." }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Primary Button Text", name: "primary_button_text", widget: "string", default: "Start Learning" }
+          - { label: "Primary Button Link", name: "primary_button_link", widget: "string", default: "learn.html" }
+          - { label: "Secondary Button Text", name: "secondary_button_text", widget: "string", default: "Explore Tools" }
+          - { label: "Secondary Button Link", name: "secondary_button_link", widget: "string", default: "tools.html" }
+          - { label: "Point 1", name: "point_1", widget: "string", default: "100% Ethical" }
+          - { label: "Point 2", name: "point_2", widget: "string", default: "Beginner Friendly" }
+          - { label: "Point 3", name: "point_3", widget: "string", default: "Practical Learning" }
+
+      - label: "SEO Settings"
+        name: "seo"
+        file: "content/settings/seo.yml"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string" }
+          - { label: "Meta Description", name: "meta_description", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string" }
+          - { label: "Author Name", name: "author", widget: "string", default: "Shakti Prasad Mallik" }
+
+      - label: "Theme Settings"
+        name: "theme"
+        file: "content/settings/theme.yml"
+        fields:
+          - { label: "Brand Name", name: "brand_name", widget: "string", default: "KRIVEX LABS" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Learn. Practice. Protect." }
+          - { label: "Primary Color", name: "primary_color", widget: "string", default: "#2563eb" }
+          - { label: "Dark Color", name: "dark_color", widget: "string", default: "#0f172a" }
+          - { label: "Logo Text", name: "logo_text", widget: "string", default: "K" }
+
+      - label: "Contact Settings"
+        name: "contact"
+        file: "content/settings/contact.yml"
+        fields:
+          - { label: "Email", name: "email", widget: "string", default: "shaktimalik463@gmail.com" }
+          - { label: "Founder Name", name: "founder_name", widget: "string", default: "Shakti Prasad Mallik" }
+          - { label: "WhatsApp Link", name: "whatsapp_link", widget: "string", required: false }
+          - { label: "GitHub Link", name: "github_link", widget: "string", required: false }
+          - { label: "YouTube Link", name: "youtube_link", widget: "string", required: false }
+          - { label: "Instagram Link", name: "instagram_link", widget: "string", required: false }
+
+  - name: "learning_paths"
+    label: "Learning Paths"
+    folder: "content/learning-paths"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Path Title", name: "title", widget: "string" }
+      - { label: "Level", name: "level", widget: "select", options: ["Beginner", "Intermediate", "Advanced"] }
+      - { label: "Duration", name: "duration", widget: "string", default: "7 Days" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Start Link", name: "start_link", widget: "string", default: "labs.html" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
   - name: "tools"
     label: "Tools"
     folder: "content/tools"
@@ -13,11 +78,14 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Tool Name", name: "title", widget: "string" }
-      - { label: "Category", name: "category", widget: "select", options: ["Recon", "Web Security", "Linux", "OSINT", "Bug Bounty", "Wordlists"] }
+      - { label: "Category", name: "category", widget: "select", options: ["Recon", "Web Security", "OSINT", "Linux", "Bug Bounty", "Command Library"] }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Command", name: "command", widget: "code", required: false }
+      - { label: "Command", name: "command", widget: "string", required: false }
       - { label: "GitHub Link", name: "github_link", widget: "string", required: false }
-      - { label: "Safety Note", name: "safety_note", widget: "text", required: false }
+      - { label: "Docs Link", name: "docs_link", widget: "string", required: false }
+      - { label: "Safety Note", name: "safety_note", widget: "text", default: "Use only on owned assets, legal labs, or authorized bug bounty programs." }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
   - name: "labs"
     label: "Labs"
     folder: "content/labs"
@@ -25,16 +93,48 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Lab Name", name: "title", widget: "string" }
-      - { label: "Difficulty", name: "difficulty", widget: "select", options: ["Beginner", "Intermediate", "Advanced"] }
+      - { label: "Category", name: "category", widget: "select", options: ["Beginner", "Web Security", "Linux & Kali", "Bug Bounty Practice", "Digital Safety"] }
+      - { label: "Level", name: "level", widget: "select", options: ["Beginner", "Intermediate", "Advanced", "All Levels"] }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Start Link", name: "start_link", widget: "string" }
+      - { label: "Tools Required", name: "tools_required", widget: "string", required: false }
+      - { label: "Start Link", name: "start_link", widget: "string", required: false }
+      - { label: "Safety Note", name: "safety_note", widget: "text", default: "Practice only in legal labs or authorized environments." }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  - name: "commands"
+    label: "Commands"
+    folder: "content/commands"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Command Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "select", options: ["Linux", "Kali", "Recon", "HTTP", "Git", "Docker", "Web Security"] }
+      - { label: "Command Code", name: "command", widget: "code" }
+      - { label: "Use Case", name: "description", widget: "text" }
+      - { label: "Safety Note", name: "safety_note", widget: "text", default: "Use only for ethical learning and authorized testing." }
+
   - name: "resources"
     label: "Resources"
     folder: "content/resources"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Type", name: "type", widget: "select", options: ["Checklist", "Template", "Guide", "PDF"] }
+      - { label: "Resource Title", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["Checklist", "Template", "PDF", "Guide", "Cheat Sheet"] }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Download Link", name: "download_link", widget: "string", required: false }
+      - { label: "Free or Paid", name: "price_type", widget: "select", options: ["Free", "Paid"], default: "Free" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Service Name", name: "title", widget: "string" }
+      - { label: "Short Description", name: "description", widget: "text" }
+      - { label: "Price", name: "price", widget: "string", required: false }
+      - { label: "Delivery Mode", name: "delivery_mode", widget: "select", options: ["Online", "Email", "Call", "Custom"], default: "Online" }
+      - { label: "Status", name: "status", widget: "select", options: ["Active", "Hidden", "Coming Soon"], default: "Active" }
+      - { label: "Button Text", name: "button_text", widget: "string", default: "Contact Now" }

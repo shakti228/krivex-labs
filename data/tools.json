@@ -1,0 +1,25 @@
+{
+  "tools": [
+    {
+      "name": "Subfinder",
+      "category": "Recon",
+      "description": "Passive subdomain discovery for authorized targets and labs.",
+      "command": "subfinder -d example.com -all",
+      "link": "https://github.com/projectdiscovery/subfinder"
+    },
+    {
+      "name": "httpx",
+      "category": "Web Analysis",
+      "description": "Check live hosts, status codes, titles, and technologies.",
+      "command": "httpx -l targets.txt -status-code -title",
+      "link": "https://github.com/projectdiscovery/httpx"
+    },
+    {
+      "name": "Nuclei",
+      "category": "Scanner",
+      "description": "Template-based scanner for legal and authorized testing only.",
+      "command": "nuclei -l targets.txt",
+      "link": "https://github.com/projectdiscovery/nuclei"
+    }
+  ]
+}

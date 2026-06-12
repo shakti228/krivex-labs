@@ -1,1 +1,163 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Security Tools — Krivex Labs</title><meta name="description" content="Curated cybersecurity tools with safe usage commands and learning notes."/><meta name="author" content="Shakti Prasad Mallik"/><link rel="stylesheet" href="style.css?v=1000"/></head><body><header class="header"><a href="index.html" class="brand"><div class="brand-logo">K</div><div><strong>KRIVEX LABS</strong><span>Learn. Practice. Protect.</span></div></a><button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button><nav class="nav" id="navMenu"><a href="index.html">Home</a><a href="learn.html">Learn</a><a href="labs.html">Labs</a><a href="tools.html">Tools</a><a href="commands.html">Commands</a><a href="resources.html">Resources</a><a href="services.html">Services</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav><a href="learn.html" class="header-cta">Start Learning</a></header><main><section class="hero inner-hero"><div class="hero-content"><p class="badge">Tools Hub</p><h1>Security Tools for Practical Learning.</h1><p class="hero-text">Explore useful cybersecurity tools with simple commands, safe usage notes, and links for ethical learning.</p><div class="hero-actions"><a href="commands.html" class="btn btn-primary">Command Library</a><a href="labs.html" class="btn btn-outline">Practice Labs</a></div></div><div class="simple-panel"><div>Recon Tools</div><div>Web Testing</div><div>OSINT</div><div>Linux Tools</div><div>Command Library</div></div></section><section class="section"><div class="section-head"><div><p class="section-label">Curated Tools</p><h2>Tools with safe commands.</h2></div></div><div class="tools-grid"><article class="tool-card"><span class="tag">Recon</span><h3>Subfinder</h3><p>Passive subdomain discovery for authorized targets and labs.</p><code>subfinder -d example.com -all -o subs.txt</code><button onclick="copyText('subfinder -d example.com -all -o subs.txt')">Copy</button></article><article class="tool-card"><span class="tag">Web</span><h3>httpx</h3><p>Check live hosts, status codes, and page titles.</p><code>httpx -l targets.txt -status-code -title</code><button onclick="copyText('httpx -l targets.txt -status-code -title')">Copy</button></article><article class="tool-card"><span class="tag">Scanner</span><h3>Nuclei</h3><p>Template-based scanner for authorized testing only.</p><code>nuclei -l targets.txt</code><button onclick="copyText('nuclei -l targets.txt')">Copy</button></article><article class="tool-card"><span class="tag">OSINT</span><h3>Amass</h3><p>External asset discovery and mapping.</p><code>amass enum -d example.com</code><button onclick="copyText('amass enum -d example.com')">Copy</button></article><article class="tool-card"><span class="tag">Fuzzing</span><h3>ffuf</h3><p>Fast web fuzzing for legal labs and authorized targets.</p><code>ffuf -u https://example.com/FUZZ -w wordlist.txt</code><button onclick="copyText('ffuf -u https://example.com/FUZZ -w wordlist.txt')">Copy</button></article><article class="tool-card"><span class="tag">Proxy</span><h3>Burp Suite</h3><p>Web security testing platform for labs and authorized programs.</p><code># Launch Burp Suite Community Edition</code><button onclick="copyText('# Launch Burp Suite Community Edition')">Copy</button></article></div></section><section class="section soft"><div class="about-card"><div class="about-logo">!</div><div><p class="section-label">Ethical Use</p><h2>Use tools responsibly.</h2><p>These tools are for owned assets, legal labs, and authorized programs only. Never scan or test systems without permission.</p></div></div></section></main><footer class="footer"><div><h3>KRIVEX LABS</h3><p>Learn. Practice. Protect.</p></div><div><h4>Explore</h4><a href="learn.html">Learn</a><a href="labs.html">Labs</a><a href="tools.html">Tools</a><a href="commands.html">Commands</a></div><div><h4>Resources</h4><a href="resources.html">Checklists</a><a href="resources.html">Templates</a><a href="services.html">Services</a></div><div><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a></div></footer><div class="copyright">© 2026 Krivex Labs. Founded by Shakti Prasad Mallik.</div><script src="script.js?v=1000"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Security Tools — Krivex Labs</title>
+  <meta name="description" content="Explore practical cybersecurity tools with safe commands, descriptions, and links for ethical learning." />
+  <meta name="author" content="Shakti Prasad Mallik" />
+
+  <link rel="stylesheet" href="style.css?v=1000" />
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="index.html" class="brand">
+      <div class="brand-logo">K</div>
+      <div class="brand-text">
+        <strong>KRIVEX LABS</strong>
+        <span>Learn. Practice. Protect.</span>
+      </div>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="labs.html">Labs</a>
+      <a href="tools.html">Tools</a>
+      <a href="commands.html">Commands</a>
+      <a href="resources.html">Resources</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="learn.html" class="header-cta">Start Learning</a>
+  </header>
+
+  <main>
+
+    <section class="hero inner-hero">
+      <div class="hero-content">
+        <p class="badge">Security Tools</p>
+
+        <h1>Practical Tools for Ethical Learning.</h1>
+
+        <p class="hero-text">
+          Explore useful cybersecurity tools with clear descriptions, safe commands,
+          and links. Use these tools only on owned assets, legal labs, or authorized programs.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#toolsList" class="btn btn-primary">View Tools</a>
+          <a href="commands.html" class="btn btn-outline">Command Library</a>
+        </div>
+
+        <div class="hero-points">
+          <span>✓ Safe Usage Notes</span>
+          <span>✓ Beginner Friendly</span>
+          <span>✓ Admin Controlled</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-card">
+          <div class="visual-top">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="visual-screen">
+            <div class="shield">T</div>
+            <h3>Tools → Commands → Practice</h3>
+            <p>Learn tools safely and responsibly.</p>
+          </div>
+        </div>
+
+        <div class="float-card float-one">Recon</div>
+        <div class="float-card float-two">Web Security</div>
+        <div class="float-card float-three">OSINT</div>
+      </div>
+    </section>
+
+    <section class="section soft" id="toolsList">
+      <div class="section-head">
+        <div>
+          <p class="section-label">Tools Library</p>
+          <h2>Admin-controlled cybersecurity tools.</h2>
+        </div>
+        <a href="admin/" class="view-link">Manage Tools →</a>
+      </div>
+
+      <div class="card-grid three" id="toolsContainer">
+        <article class="tool-card">
+          <h3>Loading tools...</h3>
+          <p>Please wait while tools are loading.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="about-card">
+        <div class="about-logo">!</div>
+        <div>
+          <p class="section-label">Safety Rule</p>
+          <h2>Use tools only where you have permission.</h2>
+          <p>
+            Every command and tool listed on Krivex Labs is for legal labs, owned assets,
+            trusted training platforms, and authorized bug bounty programs only.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <h3>KRIVEX LABS</h3>
+      <p>Learn. Practice. Protect.</p>
+      <p>Practical cybersecurity learning for ethical learners and future defenders.</p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <a href="learn.html">Learn</a>
+      <a href="labs.html">Labs</a>
+      <a href="tools.html">Tools</a>
+      <a href="commands.html">Commands</a>
+    </div>
+
+    <div>
+      <h4>Resources</h4>
+      <a href="resources.html">Checklists</a>
+      <a href="resources.html">Templates</a>
+      <a href="resources.html">Guides</a>
+      <a href="services.html">Services</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </footer>
+
+  <div class="copyright">
+    © 2026 Krivex Labs. Founded by Shakti Prasad Mallik.
+  </div>
+
+  <script src="script.js?v=1000"></script>
+</body>
+</html>

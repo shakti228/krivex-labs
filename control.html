@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krivex Control Panel</title>
+  <meta name="description" content="Krivex Labs custom control panel for website management, code editing, CMS, Netlify, GitHub and AI editing workflow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="control.css" />
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">K</div>
+        <div>
+          <strong>KRIVEX</strong>
+          <span>Control Panel</span>
+        </div>
+      </a>
+
+      <nav class="side-nav">
+        <a href="#dashboard" class="active">Dashboard</a>
+        <a href="#quick-actions">Quick Actions</a>
+        <a href="#code-editor">Code Editor</a>
+        <a href="#ai-editor">AI Editor</a>
+        <a href="#website-manager">Website Manager</a>
+        <a href="#links">Admin Links</a>
+      </nav>
+
+      <div class="sidebar-note">
+        <strong>Founder</strong>
+        <span>Shakti Prasad Mallik</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Krivex Labs Admin</p>
+          <h1>Website Control Center</h1>
+        </div>
+        <div class="top-actions">
+          <button class="ghost" id="loginBtn">Login</button>
+          <a href="index.html" class="primary">View Website</a>
+        </div>
+      </header>
+
+      <section class="hero-card" id="dashboard">
+        <div>
+          <span class="badge">Level 1 Control Panel</span>
+          <h2>Manage content, code, deploy, and AI workflow from one place.</h2>
+          <p>
+            This panel connects your CMS admin, GitHub code editor, Netlify deploy dashboard,
+            live website, and AI prompt workflow. Full AI auto-edit will be added in the next phase.
+          </p>
+          <div class="hero-buttons">
+            <a href="/admin/" class="primary">Open CMS Admin</a>
+            <a href="https://github.dev/shakti228/krivex-labs" target="_blank" class="secondary">Open Code Editor</a>
+          </div>
+        </div>
+        <div class="status-card">
+          <div><span>Website</span><strong>Live</strong></div>
+          <div><span>CMS</span><strong>Ready</strong></div>
+          <div><span>Code Editor</span><strong>GitHub</strong></div>
+          <div><span>AI Editor</span><strong>Phase 2</strong></div>
+        </div>
+      </section>
+
+      <section class="section" id="quick-actions">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Quick Actions</p>
+            <h2>Control your website faster.</h2>
+          </div>
+        </div>
+
+        <div class="grid four">
+          <a href="/admin/" class="action-card">
+            <div class="icon">🧩</div>
+            <h3>CMS Admin</h3>
+            <p>Add or edit tools, labs, resources, services and settings.</p>
+          </a>
+
+          <a href="https://github.dev/shakti228/krivex-labs" target="_blank" class="action-card">
+            <div class="icon">💻</div>
+            <h3>Code Editor</h3>
+            <p>Edit HTML, CSS and JS directly in browser with GitHub editor.</p>
+          </a>
+
+          <a href="https://app.netlify.com/sites/splendid-monstera-2db878/overview" target="_blank" class="action-card">
+            <div class="icon">🚀</div>
+            <h3>Deploy Status</h3>
+            <p>Check Netlify deployments, build status and site settings.</p>
+          </a>
+
+          <a href="https://github.com/shakti228/krivex-labs" target="_blank" class="action-card">
+            <div class="icon">📁</div>
+            <h3>GitHub Repo</h3>
+            <p>Open full source files, uploads, commits and branches.</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="section split" id="code-editor">
+        <div class="panel">
+          <p class="eyebrow">Full Code Control</p>
+          <h2>Edit website code.</h2>
+          <p>
+            Use GitHub web editor to edit all files: index.html, labs.html, tools.html,
+            style.css, script.js and admin files. After commit, Netlify auto-deploys your changes.
+          </p>
+          <a href="https://github.dev/shakti228/krivex-labs" target="_blank" class="primary">Open GitHub Code Editor</a>
+        </div>
+
+        <div class="file-list">
+          <h3>Important files</h3>
+          <button onclick="copyText('index.html')">index.html</button>
+          <button onclick="copyText('style.css')">style.css</button>
+          <button onclick="copyText('script.js')">script.js</button>
+          <button onclick="copyText('labs.html')">labs.html</button>
+          <button onclick="copyText('admin/config.yml')">admin/config.yml</button>
+        </div>
+      </section>
+
+      <section class="section" id="ai-editor">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">AI Website Editor</p>
+            <h2>Prompt-based editing workflow.</h2>
+            <p class="muted">For now this creates a perfect AI edit prompt. In Phase 2, it will directly generate changes and publish after your approval.</p>
+          </div>
+        </div>
+
+        <div class="ai-box">
+          <label for="targetFile">Target file or page</label>
+          <select id="targetFile">
+            <option value="index.html">Homepage — index.html</option>
+            <option value="style.css">Design — style.css</option>
+            <option value="script.js">Functions — script.js</option>
+            <option value="labs.html">Labs page — labs.html</option>
+            <option value="tools.html">Tools page — tools.html</option>
+            <option value="admin/config.yml">Admin config — admin/config.yml</option>
+          </select>
+
+          <label for="aiPrompt">What do you want to change?</label>
+          <textarea id="aiPrompt" rows="7" placeholder="Example: Make homepage more premium, reduce hero height, add a logo upload section, and keep mobile responsive."></textarea>
+
+          <div class="ai-actions">
+            <button onclick="buildAiPrompt()" class="primary-btn">Create AI Edit Prompt</button>
+            <button onclick="clearPrompt()" class="secondary-btn">Clear</button>
+          </div>
+
+          <label for="outputPrompt">Generated prompt</label>
+          <textarea id="outputPrompt" rows="8" readonly></textarea>
+          <button onclick="copyGeneratedPrompt()" class="copy-btn">Copy Generated Prompt</button>
+        </div>
+      </section>
+
+      <section class="section" id="website-manager">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Website Manager</p>
+            <h2>What you can control.</h2>
+          </div>
+        </div>
+
+        <div class="grid three">
+          <div class="manager-card">
+            <h3>Content</h3>
+            <p>Tools, labs, commands, resources, services, learning paths.</p>
+            <a href="/admin/">Manage content →</a>
+          </div>
+          <div class="manager-card">
+            <h3>Design</h3>
+            <p>Colors, sections, spacing, cards, layout, mobile responsive CSS.</p>
+            <a href="https://github.dev/shakti228/krivex-labs/blob/main/style.css" target="_blank">Edit design →</a>
+          </div>
+          <div class="manager-card">
+            <h3>Logo & Media</h3>
+            <p>Upload logo/images inside assets/uploads and connect them in code.</p>
+            <a href="https://github.com/shakti228/krivex-labs/tree/main/assets/uploads" target="_blank">Open uploads →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="links">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Admin Links</p>
+            <h2>Everything in one place.</h2>
+          </div>
+        </div>
+
+        <div class="link-table">
+          <a href="https://splendid-monstera-2db878.netlify.app" target="_blank"><span>Live Site</span><strong>Open</strong></a>
+          <a href="https://splendid-monstera-2db878.netlify.app/admin/" target="_blank"><span>CMS Admin</span><strong>Open</strong></a>
+          <a href="https://github.dev/shakti228/krivex-labs" target="_blank"><span>Code Editor</span><strong>Open</strong></a>
+          <a href="https://github.com/shakti228/krivex-labs" target="_blank"><span>GitHub Repository</span><strong>Open</strong></a>
+          <a href="https://app.netlify.com/sites/splendid-monstera-2db878/overview" target="_blank"><span>Netlify Dashboard</span><strong>Open</strong></a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="control.js"></script>
+</body>
+</html>

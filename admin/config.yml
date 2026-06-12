@@ -10,6 +10,23 @@ display_url: "https://splendid-monstera-2db878.netlify.app"
 logo_url: "/assets/uploads/logo.png"
 
 collections:
+  - name: "dynamic_pages"
+    label: "Dynamic Pages"
+    files:
+      - label: "Homepage JSON"
+        name: "homepage_json"
+        file: "data/homepage.json"
+        fields:
+          - { label: "Hero Badge", name: "hero_badge", widget: "string" }
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Primary Button Text", name: "primary_button_text", widget: "string" }
+          - { label: "Primary Button Link", name: "primary_button_link", widget: "string" }
+          - { label: "Secondary Button Text", name: "secondary_button_text", widget: "string" }
+          - { label: "Secondary Button Link", name: "secondary_button_link", widget: "string" }
+          - { label: "Point 1", name: "point_1", widget: "string" }
+          - { label: "Point 2", name: "point_2", widget: "string" }
+          - { label: "Point 3", name: "point_3", widget: "string" }
   - name: "settings"
     label: "Website Settings"
     files:

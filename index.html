@@ -30,6 +30,19 @@
 <section class="section"><div class="about-card"><div class="about-logo">K</div><div><p class="section-label">About Krivex Labs</p><h2>Founded by Shakti Prasad Mallik.</h2><p>Krivex Labs is a practical cybersecurity learning and digital safety platform created by Shakti Prasad Mallik, founder of CyberWithShakti. The mission is to make cybersecurity simple, ethical, and useful for learners, creators, students, and small businesses.</p></div></div></section>
 </main>
 <footer class="footer"><div><h3>KRIVEX LABS</h3><p>Learn. Practice. Protect.</p><p>Practical cybersecurity learning for ethical learners and future defenders.</p></div><div><h4>Explore</h4><a href="learn.html">Learn</a><a href="labs.html">Labs</a><a href="tools.html">Tools</a><a href="commands.html">Commands</a></div><div><h4>Resources</h4><a href="resources.html">Checklists</a><a href="resources.html">Templates</a><a href="resources.html">Guides</a><a href="services.html">Services</a></div><div><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a></div></footer><div class="copyright">© 2026 Krivex Labs. Founded by Shakti Prasad Mallik.</div>
-<script src="script.js?v=1000"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user) {
+      if (!user) {
+        window.netlifyIdentity.on("login", function() {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+  <script src="script.js?v=1000"></script>
 </body>
 </html>
